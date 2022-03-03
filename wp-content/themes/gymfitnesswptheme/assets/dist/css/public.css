@@ -59,6 +59,7 @@ xl: 1200px  --> DESKTOP or where just normal style apply
 // }
 */
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
 /*! SCSS version of normalize.css v4.2.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -75,7 +76,6 @@ html {
   -ms-text-size-adjust: 100%;
   /* 3 */
   -webkit-text-size-adjust: 100%;
-  /* 3 */
 }
 
 /* Sections
@@ -6205,7 +6205,6 @@ a, button {
 
 img {
   max-width: 100%;
-  width: 100%;
 }
 
 ol, ul {
@@ -6284,13 +6283,56 @@ input[type=number] {
 }
 
 ::-moz-selection {
-  background-color: #a09595;
+  background-color: #FF5B00;
   color: #FFFFFF;
 }
 
 ::selection {
-  background-color: #a09595;
+  background-color: #FF5B00;
   color: #FFFFFF;
+}
+
+.layout-header {
+  background-color: #2F2E2E;
+}
+.layout-header .header-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.layout-header .header-wrapper .layout-navigation {
+  width: 100%;
+}
+.layout-header .header-wrapper .layout-navigation .main-menu .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+.layout-header .header-wrapper .layout-navigation .main-menu .menu li {
+  margin-left: 30px;
+}
+.layout-header .header-wrapper .layout-navigation .main-menu .menu li.current_page_item {
+  border-bottom: 3px solid #FF5B00;
+}
+.layout-header .header-wrapper .layout-navigation .main-menu .menu li:not(:last-child) {
+  margin-right: 30px;
+}
+.layout-header .header-wrapper .layout-navigation .main-menu .menu li a:link, .layout-header .header-wrapper .layout-navigation .main-menu .menu li a:visited {
+  color: #FFFFFF;
+  font-size: 2.8rem;
+  font-family: "Staatliches", cursive;
+  white-space: nowrap;
 }
 
 /* Safari 10.1+ */

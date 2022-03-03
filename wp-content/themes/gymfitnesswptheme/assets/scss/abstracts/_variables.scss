@@ -1,10 +1,12 @@
 /* Colors -----------------------------------------------------------------*/
 $color_white:                 #FFFFFF; // White
 $color_black:                 #000000; // Black
-$color_primary:               #a09595; //Primary color
+$color_primary:               #FF5B00; // Primary color
+$color_dark_grey:             #2F2E2E; // Header background color
 /* Fonts ------------------------------------------------------------------*/
 $font_awesome_5_pro: 'Font Awesome 5 Pro';
 $font_family_lato: 'Lato', sans-serif;
+$font_family_staatliches: 'Staatliches', cursive;
 $default_font_family: $font_family_lato;
 $default_font_size: 1.6rem;
 $default_font_weight: 400;
