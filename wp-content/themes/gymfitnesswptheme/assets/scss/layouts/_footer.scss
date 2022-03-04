@@ -1,0 +1,24 @@
+.layout-footer {
+  .footer-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: .2rem solid $color_light_grey;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    .main-menu {
+      .menu {
+        display: flex;
+        li {
+          margin-right: 3rem;
+          &.current_page_item {
+            border-bottom: .3rem solid $color_primary;
+          }
+          &:not(:first-child) {
+            margin-left: 3rem;
+          }
+        }
+      }
+    }
+  }
+}

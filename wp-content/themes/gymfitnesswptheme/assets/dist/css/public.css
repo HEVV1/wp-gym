@@ -6014,7 +6014,7 @@ body {
           flex-direction: column;
   background-color: #FFFFFF;
   color: #000000;
-  font-family: "Lato", sans-serif;
+  font-family: "Staatliches", cursive;
   line-height: 1.7;
   font-weight: 400;
   font-size: 1.6rem;
@@ -6056,7 +6056,7 @@ h1,
 .styled-as-h1 {
   color: #000000;
   font-size: 1.6rem;
-  font-family: "Lato", sans-serif;
+  font-family: "Staatliches", cursive;
   font-weight: 400;
   line-height: 1.7;
   font-style: normal;
@@ -6066,7 +6066,7 @@ h2,
 .styled-as-h2 {
   color: #000000;
   font-size: 1.6rem;
-  font-family: "Lato", sans-serif;
+  font-family: "Staatliches", cursive;
   font-weight: 400;
   line-height: 1.7;
   font-style: normal;
@@ -6076,7 +6076,7 @@ h3,
 .styled-as-h3 {
   color: #000000;
   font-size: 1.6rem;
-  font-family: "Lato", sans-serif;
+  font-family: "Staatliches", cursive;
   font-weight: 400;
   line-height: 1.7;
   font-style: normal;
@@ -6086,7 +6086,7 @@ h4,
 .styled-as-h4 {
   color: #000000;
   font-size: 1.6rem;
-  font-family: "Lato", sans-serif;
+  font-family: "Staatliches", cursive;
   font-weight: 400;
   line-height: 1.7;
   font-style: normal;
@@ -6096,7 +6096,7 @@ h5,
 .styled-as-h5 {
   color: #000000;
   font-size: 1.6rem;
-  font-family: "Lato", sans-serif;
+  font-family: "Staatliches", cursive;
   font-weight: 400;
   line-height: 1.7;
   font-style: normal;
@@ -6106,12 +6106,24 @@ p,
 .styled-as-p1 {
   color: #000000;
   font-size: 1.6rem;
-  font-family: "Lato", sans-serif;
+  font-family: "Staatliches", cursive;
   font-weight: 400;
   line-height: 1.7;
   font-style: normal;
 }
 
+.nav-link {
+  color: #FFFFFF;
+  font-size: 2.8rem;
+  font-family: "Staatliches", cursive;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 991px) {
+  .nav-link {
+    font-size: 1.6rem;
+  }
+}
 /*
 .text-style {
   color: $default_font_color;
@@ -6292,8 +6304,85 @@ input[type=number] {
   color: #FFFFFF;
 }
 
+/*Color*/
+.white {
+  color: #FFFFFF;
+}
+
+.black {
+  color: #000000;
+}
+
+.block-menu {
+  display: none;
+  position: relative;
+}
+.block-menu input {
+  display: none;
+}
+.block-menu .menu-button {
+  display: inline-block;
+  position: absolute;
+  right: 1rem;
+  top: -2rem;
+}
+.block-menu .menu-button label {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.6rem;
+  background-color: #FF5B00;
+  border-radius: 0.3rem;
+  line-height: 1;
+  color: #FFFFFF;
+  text-shadow: 0rem 0.2rem 0.2rem black;
+  cursor: pointer;
+}
+.block-menu .menu-button label .menu-button-icon {
+  position: relative;
+  margin-left: 0.6rem;
+}
+.block-menu .menu-button label .menu-button-icon, .block-menu .menu-button label .menu-button-icon:before, .block-menu .menu-button label .menu-button-icon:after {
+  display: inline-block;
+  width: 1.5rem;
+  height: 0.15rem;
+  background-color: #FFFFFF;
+}
+.block-menu .menu-button label .menu-button-icon:before, .block-menu .menu-button label .menu-button-icon:after {
+  content: "";
+  position: absolute;
+}
+.block-menu .menu-button label .menu-button-icon:before {
+  top: -0.4rem;
+}
+.block-menu .menu-button label .menu-button-icon:after {
+  top: 0.4rem;
+}
+.block-menu .menu-hidden {
+  display: none;
+}
+.block-menu .menu-hidden .menu-hidden-wrapper {
+  text-align: center;
+}
+.block-menu .menu-hidden .menu-hidden-wrapper a:hover {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  color: #FF5B00;
+}
+
+@media only screen and (max-width: 991px) {
+  .block-menu {
+    display: block;
+  }
+}
 .layout-header {
   background-color: #2F2E2E;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 .layout-header .header-wrapper {
   display: -webkit-box;
@@ -6306,6 +6395,13 @@ input[type=number] {
       -ms-flex-align: center;
           align-items: center;
 }
+.layout-header .header-wrapper .layout-logo-wrapper a {
+  display: block;
+}
+.layout-header .header-wrapper .layout-logo-wrapper a img {
+  min-width: 15rem;
+  max-width: 15rem;
+}
 .layout-header .header-wrapper .layout-navigation {
   width: 100%;
 }
@@ -6315,24 +6411,58 @@ input[type=number] {
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
-          justify-content: end;
+          justify-content: flex-end;
   -ms-flex-line-pack: center;
       align-content: center;
 }
 .layout-header .header-wrapper .layout-navigation .main-menu .menu li {
-  margin-left: 30px;
+  margin-left: 3rem;
 }
 .layout-header .header-wrapper .layout-navigation .main-menu .menu li.current_page_item {
-  border-bottom: 3px solid #FF5B00;
+  border-bottom: 0.3rem solid #FF5B00;
 }
 .layout-header .header-wrapper .layout-navigation .main-menu .menu li:not(:last-child) {
-  margin-right: 30px;
+  margin-right: 3rem;
 }
-.layout-header .header-wrapper .layout-navigation .main-menu .menu li a:link, .layout-header .header-wrapper .layout-navigation .main-menu .menu li a:visited {
-  color: #FFFFFF;
-  font-size: 2.8rem;
-  font-family: "Staatliches", cursive;
-  white-space: nowrap;
+
+@media only screen and (max-width: 991px) {
+  .layout-header .header-wrapper {
+    margin-top: 2rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .layout-header .header-wrapper .layout-navigation {
+    display: none;
+  }
+}
+.layout-footer .footer-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-top: 0.2rem solid #d3d3d3;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+.layout-footer .footer-wrapper .main-menu .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.layout-footer .footer-wrapper .main-menu .menu li {
+  margin-right: 3rem;
+}
+.layout-footer .footer-wrapper .main-menu .menu li.current_page_item {
+  border-bottom: 0.3rem solid #FF5B00;
+}
+.layout-footer .footer-wrapper .main-menu .menu li:not(:first-child) {
+  margin-left: 3rem;
 }
 
 /* Safari 10.1+ */

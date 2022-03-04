@@ -57,7 +57,18 @@ p,
   line-height: $default_line_height;
   font-style: normal;
 }
+.nav-link{
+  color: $color_white;
+  font-size: 2.8rem;
+  font-family: $font_family_staatliches;
+  white-space: nowrap;
+}
 
+@include res('lg'){
+  .nav-link{
+    font-size: 1.6rem;
+  }  
+}
 /*
 .text-style {
   color: $default_font_color;

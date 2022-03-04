@@ -1,0 +1,66 @@
+.block-menu {
+  display: none;
+  position: relative;
+  input {
+    display: none;
+  }
+  .menu-button {
+    display: inline-block;
+    position: absolute;
+    right: 1rem;
+    top: -2rem;
+    label {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0.6rem;
+      background-color: $color_primary;
+      border-radius: 0.3rem;
+      line-height: 1;
+      color: $color_white;
+      text-shadow: 0rem 0.2rem 0.2rem rgba($color: $color_black, $alpha: 1);
+      cursor: pointer;
+      .menu-button-icon {
+        position: relative;
+        margin-left: 0.6rem;
+        &,
+        &:before,
+        &:after {
+          display: inline-block;
+          width: 1.5rem;
+          height: 0.15rem;
+          background-color: $color_white;
+        }
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+        }
+        &:before {
+          top: -0.4rem;
+        }
+        &:after {
+          top: 0.4rem;
+        }
+      }
+    }
+  }
+  .menu-hidden {
+    display: none;
+    .menu-hidden-wrapper {
+      text-align: center;
+      a {
+        &:hover {
+          transition: all $default_transition_time;
+          color: $color_primary;
+        }
+      }
+    }
+  }
+}
+
+@include res("lg") {
+  .block-menu {
+    display: block;
+  }
+}
