@@ -1,7 +1,31 @@
+/*Text positioning*/
+.text-left{
+  text-align: left;
+}
+.text-center{
+  text-align: center;
+}
+.text-right{
+  text-align: right;
+}
+
 /*Color*/
 .white {
   color: $color_white;
 }
 .black {
   color: $color_black;
+}
+.color-primary{
+  color: $color_primary;
+}
+
+/*Margin Top*/
+.mt-50{
+  margin-top: 5rem;
+}
+
+/*Margin Bottom*/
+.mb-50{
+  margin-bottom: 5rem;
 }

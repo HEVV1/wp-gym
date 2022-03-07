@@ -15,15 +15,11 @@ function gymfitness_scripts()
   $ver = '5.9.1';
   //Add public css
   wp_enqueue_style('public', get_template_directory_uri() . '/assets/dist/css/public.css', array(), $ver);
- 
- 
   /* Load JS files */
-  // wp_enqueue_script('jquery', get_template_directory_uri() . '/assets/fake_node_modules/jquery/jquery.min.js', array(), '3.6.0', true);
-  // wp_enqueue_script('menu', get_template_directory_uri() . '/assets/js/modules/menu.js', array(), $ver, true);
+  wp_enqueue_script('jquery');
+  wp_enqueue_script('menu', get_template_directory_uri() . '/assets/js/modules/menu.js', array('jquery'), '3.3.2', true);
 }
 add_action('wp_enqueue_scripts', 'gymfitness_scripts');
-
-
 
 //Remove margin top
 add_theme_support('admin-bar', array('callback' => '__return_false'));
@@ -37,3 +33,14 @@ function add_menu_link_class($atts, $item, $args)
   return $atts;
 }
 add_filter('nav_menu_link_attributes', 'add_menu_link_class', 1, 3);
+
+//Enable Feature images and other stuff
+function gymfitness_setup()
+{
+  //Register new image size
+  add_image_size('square', 350, 350, true);
+
+  //Add featured image
+  add_theme_support('post-thumbnails');
+}
+add_action('after_setup_theme', 'gymfitness_setup'); //When the theme is activated and ready! 

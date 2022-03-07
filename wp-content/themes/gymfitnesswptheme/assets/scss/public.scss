@@ -23,7 +23,7 @@
 @import "layouts/form";
 @import "layouts/footer";
 // Pages
-//..........//
+@import "pages/page.scss";
 // Browser-specific overrides
 @import "overrides/ff_only";
 @import "overrides/safari_only";

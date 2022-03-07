@@ -6014,7 +6014,7 @@ body {
           flex-direction: column;
   background-color: #FFFFFF;
   color: #000000;
-  font-family: "Staatliches", cursive;
+  font-family: "Lato", sans-serif;
   line-height: 1.7;
   font-weight: 400;
   font-size: 1.6rem;
@@ -6055,18 +6055,19 @@ body {
 h1,
 .styled-as-h1 {
   color: #000000;
-  font-size: 1.6rem;
+  font-size: 3.6rem;
   font-family: "Staatliches", cursive;
   font-weight: 400;
   line-height: 1.7;
   font-style: normal;
+  margin: 0;
 }
 
 h2,
 .styled-as-h2 {
   color: #000000;
   font-size: 1.6rem;
-  font-family: "Staatliches", cursive;
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
   font-style: normal;
@@ -6076,7 +6077,7 @@ h3,
 .styled-as-h3 {
   color: #000000;
   font-size: 1.6rem;
-  font-family: "Staatliches", cursive;
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
   font-style: normal;
@@ -6086,7 +6087,7 @@ h4,
 .styled-as-h4 {
   color: #000000;
   font-size: 1.6rem;
-  font-family: "Staatliches", cursive;
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
   font-style: normal;
@@ -6096,7 +6097,7 @@ h5,
 .styled-as-h5 {
   color: #000000;
   font-size: 1.6rem;
-  font-family: "Staatliches", cursive;
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
   font-style: normal;
@@ -6106,10 +6107,12 @@ p,
 .styled-as-p1 {
   color: #000000;
   font-size: 1.6rem;
-  font-family: "Staatliches", cursive;
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
   font-style: normal;
+  margin-top: 2rem;
+  text-align: justify;
 }
 
 .nav-link {
@@ -6122,6 +6125,10 @@ p,
 @media only screen and (max-width: 991px) {
   .nav-link {
     font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 1.4rem;
   }
 }
 /*
@@ -6229,10 +6236,6 @@ iframe {
   display: block;
 }
 
-p {
-  margin-bottom: 0;
-}
-
 b, strong {
   font-weight: 700;
 }
@@ -6304,6 +6307,19 @@ input[type=number] {
   color: #FFFFFF;
 }
 
+/*Text positioning*/
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
 /*Color*/
 .white {
   color: #FFFFFF;
@@ -6313,18 +6329,28 @@ input[type=number] {
   color: #000000;
 }
 
-.block-menu {
-  display: none;
-  position: relative;
+.color-primary {
+  color: #FF5B00;
 }
-.block-menu input {
+
+/*Margin Top*/
+.mt-50 {
+  margin-top: 5rem;
+}
+
+/*Margin Bottom*/
+.mb-50 {
+  margin-bottom: 5rem;
+}
+
+.block-menu {
   display: none;
 }
 .block-menu .menu-button {
   display: inline-block;
   position: absolute;
   right: 1rem;
-  top: -2rem;
+  top: 1rem;
 }
 .block-menu .menu-button label {
   position: relative;
@@ -6339,6 +6365,7 @@ input[type=number] {
   border-radius: 0.3rem;
   line-height: 1;
   color: #FFFFFF;
+  font-family: "Staatliches", cursive;
   text-shadow: 0rem 0.2rem 0.2rem black;
   cursor: pointer;
 }
@@ -6465,6 +6492,46 @@ input[type=number] {
   margin-left: 3rem;
 }
 
+@media only screen and (max-width: 767px) {
+  .layout-footer .footer-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .layout-footer .footer-wrapper .main-menu {
+    margin-bottom: 2rem;
+  }
+  .layout-footer .footer-wrapper .main-menu .menu li {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+  .layout-footer .footer-wrapper .copyright-text {
+    text-align: center;
+    white-space: pre-wrap;
+  }
+}
+.page.no-sidebars {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (max-width: 767px) {
+  .page.with-sidebars {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
 /* Safari 10.1+ */
 @media not all and (-webkit-min-device-pixel-ratio: 0), not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) {

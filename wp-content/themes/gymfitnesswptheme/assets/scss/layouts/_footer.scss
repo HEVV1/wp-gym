@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: .2rem solid $color_light_grey;
+    border-top: 0.2rem solid $color_light_grey;
     padding-top: 6rem;
     padding-bottom: 6rem;
     .main-menu {
@@ -12,12 +12,35 @@
         li {
           margin-right: 3rem;
           &.current_page_item {
-            border-bottom: .3rem solid $color_primary;
+            border-bottom: 0.3rem solid $color_primary;
           }
           &:not(:first-child) {
             margin-left: 3rem;
           }
         }
+      }
+    }
+  }
+}
+
+@include res('md'){
+  .layout-footer {
+    .footer-wrapper {
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+      .main-menu {
+        margin-bottom: 2rem;
+        .menu {          
+          li {
+            margin-right: 1rem;           
+            margin-left: 1rem;            
+          }
+        }
+      }
+      .copyright-text{
+        text-align: center;
+        white-space: pre-wrap;
       }
     }
   }
