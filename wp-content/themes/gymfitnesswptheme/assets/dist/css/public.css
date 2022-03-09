@@ -6517,19 +6517,28 @@ input[type=number] {
     white-space: pre-wrap;
   }
 }
-.page.no-sidebars {
+.page .page-wrapper.no-sidebar {
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
 }
-@media only screen and (max-width: 767px) {
-  .page.with-sidebars {
+
+@media only screen and (min-width: 991px) {
+  .page .page-wrapper.with-sidebar {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+  }
+  .page .page-wrapper.with-sidebar .page-content {
+    -ms-flex-preferred-size: calc(60% - 2rem);
+        flex-basis: calc(60% - 2rem);
+  }
+  .page .page-wrapper.with-sidebar .page-sidebar {
+    -ms-flex-preferred-size: calc(40% - 2rem);
+        flex-basis: calc(40% - 2rem);
   }
 }
 /* Safari 10.1+ */

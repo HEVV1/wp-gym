@@ -23,7 +23,7 @@
   }
 }
 
-@include res('md'){
+@include resMaxWidth('md'){
   .layout-footer {
     .footer-wrapper {
       flex-flow: column;

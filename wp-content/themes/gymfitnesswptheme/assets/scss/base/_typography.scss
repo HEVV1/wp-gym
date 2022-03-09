@@ -68,7 +68,7 @@ p,
   white-space: nowrap;
 }
 
-@include res("lg") {
+@include resMaxWidth("lg") {
   .nav-link {
     font-size: 1.6rem;
   }

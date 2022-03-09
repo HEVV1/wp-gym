@@ -65,7 +65,7 @@ lg: 992px   --> TABLE LANDSCAPE
 xl: 1200px  --> DESKTOP or where just normal style apply
 */
 
-@mixin res($breakpoint) {
+@mixin resMaxWidth($breakpoint) {
   @if $breakpoint == 'xs' {
     @media only screen and (max-width: calc(map-get($map: $grid-breakpoints, $key: 'xs') - 1px)) { @content; }
   }
@@ -80,5 +80,23 @@ xl: 1200px  --> DESKTOP or where just normal style apply
   }
   @if $breakpoint == 'xl' {
     @media only screen and (max-width: calc(map-get($map: $grid-breakpoints, $key: 'xl') - 1px)) { @content; }
+  }
+}
+
+@mixin resMinWidth($breakpoint) {
+  @if $breakpoint == 'xs' {
+    @media only screen and (min-width: calc(map-get($map: $grid-breakpoints, $key: 'xs') - 1px)) { @content; }
+  }
+  @if $breakpoint == 'sm' {
+    @media only screen and (min-width: calc(map-get($map: $grid-breakpoints, $key: 'sm') - 1px)) { @content; }
+  }
+  @if $breakpoint == 'md' {
+    @media only screen and (min-width: calc(map-get($map: $grid-breakpoints, $key: 'md') - 1px)) { @content; }
+  }
+  @if $breakpoint == 'lg' {
+    @media only screen and (min-width: calc(map-get($map: $grid-breakpoints, $key: 'lg') - 1px)) { @content; }
+  }
+  @if $breakpoint == 'xl' {
+    @media only screen and (min-width: calc(map-get($map: $grid-breakpoints, $key: 'xl') - 1px)) { @content; }
   }
 }
