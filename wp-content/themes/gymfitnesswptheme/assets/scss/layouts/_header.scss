@@ -37,7 +37,7 @@
   }
 }
 
-@include resMaxWidth('lg'){
+@include resMaxWidth('md'){
   .layout-header {
     .header-wrapper{
       margin-top: 2rem;

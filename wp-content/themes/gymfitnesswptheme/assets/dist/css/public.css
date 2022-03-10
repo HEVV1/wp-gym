@@ -6130,6 +6130,11 @@ p,
   p {
     font-size: 1.4rem;
   }
+
+  h1,
+.styled-as-h1 {
+    font-size: 2rem;
+  }
 }
 /*
 .text-style {
@@ -6343,6 +6348,11 @@ input[type=number] {
   margin-bottom: 5rem;
 }
 
+/*Bold*/
+.text-thickness-700 {
+  font-weight: 700;
+}
+
 .block-menu {
   display: none;
 }
@@ -6401,9 +6411,59 @@ input[type=number] {
   color: #FF5B00;
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 767px) {
   .block-menu {
     display: block;
+  }
+}
+.block-classes-group .classes-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.block-classes-group .classes-list .classes-list-item {
+  -ms-flex-preferred-size: calc(50% - 2rem);
+      flex-basis: calc(50% - 2rem);
+  margin-top: 3rem;
+  position: relative;
+}
+.block-classes-group .classes-list .classes-list-item .card-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% - 0.7rem);
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.4)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+}
+.block-classes-group .classes-list .classes-list-item .card-content .card-content-wrapper {
+  padding: 2rem;
+}
+@media only screen and (max-width: 767px) {
+  .block-classes-group .classes-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+  .block-classes-group .classes-list .classes-list-item {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-top: 1rem;
+  }
+  .block-classes-group .classes-list .classes-list-item .card-content .card-content-wrapper {
+    padding: 1rem;
   }
 }
 .layout-header {
@@ -6452,7 +6512,7 @@ input[type=number] {
   margin-right: 3rem;
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 767px) {
   .layout-header .header-wrapper {
     margin-top: 2rem;
     -webkit-box-pack: center;

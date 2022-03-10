@@ -1,0 +1,44 @@
+.block-classes-group {
+  .classes-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .classes-list-item {
+      flex-basis: calc(50% - 2rem);
+      margin-top: 3rem;
+      position: relative;
+      .card-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: calc(100% - 0.7rem);
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        background: linear-gradient(to bottom, rgba($color: #000000, $alpha: 0), rgba($color: #000000, $alpha: 0.4));
+        .card-content-wrapper {
+          padding: 2rem;
+        }
+      }
+      &.gradient {
+      }
+    }
+  }
+}
+
+@include resMaxWidth("md") {
+  .block-classes-group {
+    .classes-list {
+      flex-flow: column;
+      .classes-list-item {
+        flex-basis: 100%;
+        margin-top: 1rem;
+        .card-content {
+          .card-content-wrapper {
+            padding: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
