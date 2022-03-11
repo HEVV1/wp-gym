@@ -1,0 +1,16 @@
+.block-sidebar {
+  display: flex;
+  &:not(:first-child){
+    margin-top: 2rem;
+  }
+  .sidebar-widget-image {
+    flex-basis: 34%;
+    img {
+      display: block;
+    }
+  }
+  .sidebar-class-content {
+    flex-basis: 66%;
+    padding-left: 2rem;
+  }
+}
