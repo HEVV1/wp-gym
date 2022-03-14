@@ -40,13 +40,20 @@ class GymFitness_Classes_Widget extends WP_Widget
    */
   public function widget($args, $instance)
   {
-    echo $args['before_widget']; ?>
+    echo $args['before_widget']; 
+
+      $quantity = $instance['quantity'];
+    ?>
+    
+    <h1 class="mt-5 mb-5 text-center color-primary">
+      <?php echo esc_html( $instance['title'] ) ?>
+    </h1>
 
     <ul class="sidebar-classes">
       <?php
       $args = array(
         'post_type' => 'gymfitness_classes',
-        'posts_per_page' => 3,
+        'posts_per_page' => $quantity,
         'orderby' => 'rand'
       );
 
@@ -63,14 +70,15 @@ class GymFitness_Classes_Widget extends WP_Widget
               <h2 class="styled-as-h2 color-primary"><?php the_title(); ?></h2>
             </a>
             <?php
-              $start_time = get_field('start_time');
-              $end_time = get_field('end_time');
+            $start_time = get_field('start_time');
+            $end_time = get_field('end_time');
             ?>
             <p class="text-thickness-700">
-              <?php the_field('class_days'); echo " - {$start_time} to {$end_time}" ?>
+              <?php the_field('class_days');
+              echo " - {$start_time} to {$end_time}" ?>
             </p>
           </div>
-          
+
         </li>
       <?php endwhile;
       wp_reset_postdata(); ?>
@@ -90,10 +98,26 @@ class GymFitness_Classes_Widget extends WP_Widget
   public function form($instance)
   {
     $title = !empty($instance['title']) ? $instance['title'] : esc_html__('New title', 'text_domain');
+    $quantity = !empty($instance['quantity']) ? $instance['quantity'] : esc_html__('1', 'text_domain');
   ?>
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_attr_e('Title:', 'text_domain'); ?></label>
-      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>">
+      <input 
+      class="widefat" 
+      id="<?php echo esc_attr($this->get_field_id('title')); ?>" 
+      name="<?php echo esc_attr($this->get_field_name('title')); ?>" 
+      type="text" 
+      value="<?php echo esc_attr($title); ?>">
+    </p>
+    <p>
+      <label for="<?php echo esc_attr($this->get_field_id('quantity')); ?>"><?php esc_attr_e('Amout of Classes to Display:', 'text_domain'); ?></label>
+      <input 
+      class="widefat" 
+      id="<?php echo esc_attr($this->get_field_id('quantity')); ?>" 
+      name="<?php echo esc_attr($this->get_field_name('quantity')); ?>" 
+      type="number" 
+      value="<?php echo esc_attr($quantity); ?>"
+      min="1">
     </p>
 <?php
   }
@@ -112,6 +136,7 @@ class GymFitness_Classes_Widget extends WP_Widget
   {
     $instance = array();
     $instance['title'] = (!empty($new_instance['title'])) ? sanitize_text_field($new_instance['title']) : '';
+    $instance['quantity'] = (!empty($new_instance['quantity'])) ? sanitize_text_field($new_instance['quantity']) : '';
 
     return $instance;
   }
