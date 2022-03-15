@@ -9,26 +9,28 @@ get_header(); ?>
     <div class="page-wrapper">
       <div class="page-content">
         <?php while (have_posts()) : the_post(); ?>
-          <h1 class="text-center color-primary"><?php the_title(); ?></h1>
+          <h1 class="text-center color-primary mb-5"><?php the_title(); ?></h1>
 
           <?php
           $gallery = get_post_gallery(get_the_ID(), false);
           $gallery_images_ids = explode(',', $gallery['ids']);
-            echo "<pre>";
-            var_dump($gallery_images_ids);
-            echo "</pre>";
           ?>
-          <ul class="gallery-images">
+          <ul class="block-gallery-images">
             <?php
-              $i = 0;
-              foreach ($gallery_images_ids as $key => $value) :
-                $size = ( $i === 3 || $i == 6) ? 'portrait' : 'square';
-                $image = wp_get_attachment_image_src($value, $size);                           
+            $i = 0;
+            foreach ($gallery_images_ids as $key => $value) :
+              $size = ($i === 3 || $i == 6) ? 'portrait' : 'square';
+              $image = wp_get_attachment_image_src($value, $size);
             ?>
-            <img src="<?php echo $image[0]; ?>" alt="">            
-            <?php $i++; endforeach; ?>
+            <li>
+              <a href="<?php echo $image[0] ?>" data-lightbox="gallery">
+                <img src="<?php echo $image[0]; ?>" alt="">
+              </a>
+            </li>
+            <?php $i++;
+            endforeach; ?>
           </ul>
-          <?php the_content(); ?>
+          <?php // the_content(); ?>
         <?php endwhile; ?>
       </div>
     </div>

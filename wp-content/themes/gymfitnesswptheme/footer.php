@@ -15,8 +15,8 @@
               <span class="nav-link copyright-text black">&#169; All Rights Reserved. <?php echo get_bloginfo('name'), " ", date("Y") ?> </span>
             </div>
           </div>
-        </footer>
-      <?php wp_footer(); ?>
+        </footer>      
     </div>
+    <?php wp_footer(); ?>
   </body>
 </html>

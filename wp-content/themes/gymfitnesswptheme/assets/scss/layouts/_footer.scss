@@ -9,6 +9,8 @@
     .main-menu {
       .menu {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         li {
           margin-right: 3rem;
           &.current_page_item {
@@ -23,7 +25,7 @@
   }
 }
 
-@include resMaxWidth('md'){
+@include resMaxWidth("md") {
   .layout-footer {
     .footer-wrapper {
       flex-flow: column;
@@ -31,14 +33,16 @@
       justify-content: center;
       .main-menu {
         margin-bottom: 2rem;
-        .menu {          
+        .menu {
+          flex-flow: column;
           li {
-            margin-right: 1rem;           
-            margin-left: 1rem;            
+            text-align: center;
+            margin-right: 0 !important;
+            margin-left: 0 !important;
           }
         }
       }
-      .copyright-text{
+      .copyright-text {
         text-align: center;
         white-space: pre-wrap;
       }

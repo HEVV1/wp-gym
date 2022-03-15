@@ -17,10 +17,14 @@ function gymfitness_scripts()
 {
   $ver = '5.9.1';
   //Add public css
-  wp_enqueue_style('public', get_template_directory_uri() . '/assets/dist/css/public.css', array(), $ver);
+  wp_enqueue_style('public_css', get_template_directory_uri() . '/assets/dist/css/public.css', array(), $ver);
+  wp_enqueue_style('lightbox_css', get_template_directory_uri() . '/assets/dist/css/lightbox.min.css', array(), $ver);
   /* Load JS files */
   wp_enqueue_script('jquery');
-  wp_enqueue_script('menu', get_template_directory_uri() . '/assets/js/modules/menu.js', array('jquery'), '3.3.2', true);
+  if (basename(get_page_template()) === 'gallery.php') {
+    wp_enqueue_script('lightboxjs', get_template_directory_uri() . '/assets/fake_node_modules/lightbox/lightbox.min.js', array('jquery'), '2.11.2', true);  
+  }  
+  wp_enqueue_script('menujs', get_template_directory_uri() . '/assets/js/modules/menu.js', array('jquery'), '3.3.2', true);
 }
 add_action('wp_enqueue_scripts', 'gymfitness_scripts');
 
