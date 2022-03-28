@@ -22,6 +22,11 @@
       }
     }
   }
+  .classes-group-text{
+    p{
+      display: inline-block;
+    }
+  }
 }
 
 @include resMaxWidth("md") {
@@ -31,9 +36,25 @@
       .classes-list-item {
         flex-basis: 100%;
         margin-top: 1rem;
+        text-align: center;
         .card-content {
+          display: inline-block;
+          position: unset;
+          background: unset;
+          width: auto;
           .card-content-wrapper {
             padding: 1rem;
+            a{
+              h1{
+                color: $color_black;
+              }
+            }
+            p{
+              a,
+              span{
+                color: $color_black;
+              }              
+            }
           }
         }
       }

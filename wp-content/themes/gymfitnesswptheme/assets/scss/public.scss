@@ -15,13 +15,15 @@
 @import "base/animations";
 @import "base/utilities";
 // Components
-//..........//
+@import "components/input.scss";
+@import "components/textarea.scss";
 // Blocks
 @import "blocks/menu.scss";
 @import "blocks/classes_group.scss";
 @import "blocks/sidebar.scss";
 @import "blocks/lightbox.scss";
 @import "blocks/gallery_images.scss";
+@import "blocks/categories";
 // Layouts
 @import "layouts/header";
 @import "layouts/form";
