@@ -1,3 +1,12 @@
 .wpcf7{
-  
+  .wpcf7-response-output{
+    background-color: $color_red;
+    border: none !important;
+    color: $color_white;
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
 }

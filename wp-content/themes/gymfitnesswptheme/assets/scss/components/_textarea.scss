@@ -1,4 +1,7 @@
 textarea{
   border: 0.1rem solid rgba($color: $color_black, $alpha: 0.2);
   width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  resize: none;
 }

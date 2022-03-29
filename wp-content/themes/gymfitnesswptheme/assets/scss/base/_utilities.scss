@@ -1,11 +1,11 @@
 /*Text positioning*/
-.text-left{
+.text-left {
   text-align: left;
 }
-.text-center{
+.text-center {
   text-align: center;
 }
-.text-right{
+.text-right {
   text-align: right;
 }
 
@@ -16,21 +16,26 @@
 .black {
   color: $color_black;
 }
-.color-primary{
+.color-primary {
   color: $color_primary;
 }
 
 /*Margin Top*/
-.mt-50{
+.mt-50 {
   margin-top: 5rem;
 }
 
 /*Margin Bottom*/
-.mb-50{
+.mb-50 {
   margin-bottom: 5rem;
 }
 
 /*Bold*/
-.text-thickness-700{
+.text-thickness-700 {
   font-weight: 700;
+}
+
+/*Height*/
+.h300 {
+  height: 300px;
 }
