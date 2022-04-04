@@ -1,11 +1,16 @@
-document.addEventListener('DOMContentLoaded', () => {  
-  var map = L.map('map').setView([51.505, -0.09], 13);
+document.addEventListener('DOMContentLoaded', () => {
+  const lat = jQuery('#lat').val();
+  const lng = jQuery('#lng').val();
+  const address = jQuery('#address').val();
 
-  L.tileLayer('https://{s}.title.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '$copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' 
-  }).addTo(map);
+  var map = L.map('map').setView([lat, lng], 16);
+  if (lat && lng) {
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
-  L.marker([51.5, -0.09]).addTo(map)
-  .bindPopup('A pretty CSS3 popup. <br> Easily customizable.')
-  .openPopup();
+    L.marker([lat, lng]).addTo(map)
+      .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+      .openPopup();
+  }
 });

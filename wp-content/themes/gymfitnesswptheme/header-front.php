@@ -8,10 +8,10 @@
   <?php wp_head(); ?>
 </head>
 
-<body>
+<body class="front-page">
   <div class="wrapper-page">
     <div class="wrapper-page-header-and-content">
-      <header class="layout-header">
+      <header class="layout-header front-page">
         <div class="container">
           <div class="header-wrapper">
             <div class="layout-logo-wrapper">
@@ -54,6 +54,11 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="tagline text-center">
+          <h1><?php the_field('hero_tagline'); ?></h1>
+          <p><?php the_field('hero_content'); ?></p>
+          <p><?php the_field('hero_image'); ?></p>
         </div>
       </header>
       <div class="wrapper-page-content">
